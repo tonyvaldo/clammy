@@ -12,9 +12,6 @@ function setup() {
   createCanvas(400, 400);
   angleMode(DEGREES);
 
-  mic = new p5.AudioIn()
-  mic.start();
-
   bubbles1 = new Bubbles(300, 300);
   console.log(bubbles1);
 
