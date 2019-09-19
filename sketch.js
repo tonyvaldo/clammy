@@ -61,6 +61,8 @@ function mousePressed() {
   if (mouseX > width * 0.0 && mouseX < width * 0.9 && mouseY > height * 0.0 && mouseY < height * 1.0) {
     console.log("mouse beep in here");
     bamYes = !bamYes;
+  } else if (mouseX > width * 0.0 && mouseX < width * 0.9 && mouseY > height * 0.0 && mouseY < height * 1.0)){
+    console.log("mic level" + mic.getLevel());
   }
 
 
