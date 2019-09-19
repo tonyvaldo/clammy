@@ -6,7 +6,7 @@ let bamYes = false;
 
 let bubbles1;
 let bubbles2;
-let bubbles3;
+let userClicked;
 
 function setup() {
   createCanvas(400, 400);
@@ -23,6 +23,8 @@ function setup() {
 
   bubbles3 = new Bubbles(100, 380);
   console.log(bubbles2);
+
+  userClicked = true
 }
 
 function draw() {
@@ -30,7 +32,7 @@ function draw() {
   console.log("mic level" + mic.getLevel());
 
   micLevel = mic.getLevel();
-
+  if (userClicked);
   shutY = map(mic.getLevel(.8), 0, .13, 0, 38);
 
   drawTail();
@@ -61,8 +63,11 @@ function mousePressed() {
   if (mouseX > width * 0.0 && mouseX < width * 0.9 && mouseY > height * 0.0 && mouseY < height * 1.0) {
     console.log("mouse beep in here");
     bamYes = !bamYes;
-  } 
+  }
 
+  mic = new p5.AudioIn()
+    mic.start();
+    userClicked = true;
 
 }
 
