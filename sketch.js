@@ -27,9 +27,10 @@ function setup() {
 function draw() {
   background('rgba(0,255,0, 0.75)');
   console.log("mic level" + mic.getLevel());
-
+if (userClicked){
   micLevel = mic.getLevel();
-  if (userClicked);
+}
+
   shutY = map(mic.getLevel(.8), 0, .13, 0, 38);
 
   drawTail();
