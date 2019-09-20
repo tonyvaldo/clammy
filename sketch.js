@@ -28,8 +28,8 @@ function draw() {
   background('rgba(0,255,0, 0.75)');
   console.log("mic level" + mic.getLevel());
 if (userClicked){
-  micLevel = mic.getLevel();
-}
+
+
 
   shutY = map(mic.getLevel(.8), 0, .13, 0, 38);
 
@@ -53,6 +53,7 @@ if (userClicked){
     fill(205, 250, 250)
     circle(170, 305, 25);
   }
+}
 }
 
 function mousePressed() {
