@@ -64,10 +64,10 @@ function mousePressed() {
     bamYes = !bamYes;
   }
 
-  mic = new p5.AudioIn(){
+  mic = new p5.AudioIn()
     mic.start();
     userClicked = true;
-}
+
 }
 
 function drawTail() {
