@@ -6,11 +6,14 @@ let bamYes = false;
 
 let bubbles1;
 let bubbles2;
-let userClicked;
+let bubbles3;
 
 function setup() {
   createCanvas(400, 400);
   angleMode(DEGREES);
+
+  mic = new p5.AudioIn()
+  mic.start();
 
   bubbles1 = new Bubbles(300, 300);
   console.log(bubbles1);
@@ -20,16 +23,13 @@ function setup() {
 
   bubbles3 = new Bubbles(100, 380);
   console.log(bubbles2);
-
-  userClicked = true
 }
 
 function draw() {
   background('rgba(0,255,0, 0.75)');
   console.log("mic level" + mic.getLevel());
-if (userClicked){
 
-
+  micLevel = mic.getLevel(.9);
 
   shutY = map(mic.getLevel(.8), 0, .13, 0, 38);
 
@@ -54,7 +54,6 @@ if (userClicked){
     circle(170, 305, 25);
   }
 }
-}
 
 function mousePressed() {
   // if the position of the mouse is inside this region then do this
@@ -64,9 +63,6 @@ function mousePressed() {
     bamYes = !bamYes;
   }
 
-  mic = new p5.AudioIn()
-    mic.start();
-    userClicked = true;
 
 }
 
