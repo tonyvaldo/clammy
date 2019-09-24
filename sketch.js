@@ -6,7 +6,7 @@ let bamYes = false;
 
 let bubbles1;
 let bubbles2;
-let bubbles3;
+let userClicked = false;
 
 function setup() {
   createCanvas(400, 400);
@@ -27,6 +27,7 @@ function setup() {
 
 function draw() {
   background('rgba(0,255,0, 0.75)');
+  if (userClicked) {
   console.log("mic level" + mic.getLevel());
 
   micLevel = mic.getLevel(.9);
@@ -54,6 +55,7 @@ function draw() {
     circle(170, 305, 25);
   }
 }
+}
 
 function mousePressed() {
   // if the position of the mouse is inside this region then do this
@@ -62,7 +64,12 @@ function mousePressed() {
     console.log("mouse beep in here");
     bamYes = !bamYes;
   }
+}
 
+function mouseClicked(){
+  userClicked = true;
+  mic = new p5.AudioIn();
+  mic.start();
 
 }
 
